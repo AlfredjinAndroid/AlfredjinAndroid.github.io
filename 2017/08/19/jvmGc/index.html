@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java," />
 
 
 
@@ -93,16 +93,18 @@
 
 
 
-<meta name="description" content="无非就是把枯燥留给自己。。。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="AlfredJin">
-<meta property="og:url" content="http://yoursite.com/categories/测试/index.html">
+<meta name="description" content="一道面试时问道的题目">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM如何判断一个对象是否可以被回收">
+<meta property="og:url" content="http://yoursite.com/2017/08/19/jvmGc/index.html">
 <meta property="og:site_name" content="AlfredJin">
-<meta property="og:description" content="无非就是把枯燥留给自己。。。">
+<meta property="og:description" content="一道面试时问道的题目">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-19T09:57:04.858Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AlfredJin">
-<meta name="twitter:description" content="无非就是把枯燥留给自己。。。">
+<meta name="twitter:title" content="JVM如何判断一个对象是否可以被回收">
+<meta name="twitter:description" content="一道面试时问道的题目">
 
 
 
@@ -130,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/测试/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/19/jvmGc/"/>
 
 
 
 
 
-  <title>分类: 测试 | AlfredJin</title>
+  <title>JVM如何判断一个对象是否可以被回收 | AlfredJin</title>
   
 
 
@@ -161,7 +163,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,73 +247,191 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>测试<small>分类</small>
-      </h1>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/19/kotlin/" itemprop="url">
-              
-                <span itemprop="name">k</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-19T17:34:57+08:00"
-              content="2017-08-19" >
-          08-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/05/postName/" itemprop="url">
-              
-                <span itemprop="name">postName</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-05T16:37:12+08:00"
-              content="2017-08-05" >
-          08-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-java " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/jvmGc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alfredjin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlfredJin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JVM如何判断一个对象是否可以被回收</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T17:57:04+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  一道面试时问道的题目
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>比较常见的两种垃圾判定算法</p>
+<p>1.引用计数</p>
+<p>概述：给对象添加一个引用计数器，每有一个地方引用这个对象，计数器值加1，每有一个地方引用失效则减1。</p>
+<p>应用实例Python中使用了这种算法判定死对象。</p>
+<p>优点：实现简单、判定效率高</p>
+<p>缺点：难以解决对象之间的循环引用问题</p>
+<p>2.可达性分析(Reachability Analysis)</p>
+<p>概述：从GC Roots（每种具体实现对GC Roots有不同的定义）作为起点，向下搜索它们引用的对象，可以生成一棵引用树，树的节点视为可达对象，反之视为不可达。</p>
+<p>应用实例：Java,C#,Lisp都使用这种算法</p>
+<p>JVM使用“可达性分析算法”来判定一个对象是否会可以被回收，有两个细节需要注意：</p>
+<p>Java中GC Roots 包括以下几种对象：</p>
+<pre><code>a.虚拟机栈（帧栈中的本地变量表）中引用的对象
+b.方法区中静态属性引用的对象
+c.方法区中常量引用的对象
+d.本地方法栈中JNI引用的对象
+</code></pre><p>3.不可达对象一定会被回收吗</p>
+<p>不是。</p>
+<p>执行垃圾回收前JVM会执行不可达对象的finalize方法，如果执行完毕之后该对象变为可达，则不会被回收它。但一个对象的finalize方法只会被执行一次。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/19/webSelectTag/" rel="next" title="前端可编辑select标签仿搜索操作">
+                <i class="fa fa-chevron-left"></i> 前端可编辑select标签仿搜索操作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -319,6 +439,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -515,10 +639,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
