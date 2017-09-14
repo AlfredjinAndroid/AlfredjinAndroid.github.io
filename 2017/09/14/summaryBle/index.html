@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="android," />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -93,20 +93,18 @@
 
 
 
-<meta name="description" content="ButterKnife是一款View注解框架，方便我们使用控件，而不需要频繁的findViewById">
-<meta name="keywords" content="android">
+<meta name="description" content="工作完毕 多多总结">
+<meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ButterKnife的学习使用">
-<meta property="og:url" content="http://yoursite.com/2017/08/19/butterKnife/index.html">
+<meta property="og:title" content="工作总结-蓝牙手环">
+<meta property="og:url" content="http://yoursite.com/2017/09/14/summaryBle/index.html">
 <meta property="og:site_name" content="AlfredJin">
-<meta property="og:description" content="ButterKnife是一款View注解框架，方便我们使用控件，而不需要频繁的findViewById">
+<meta property="og:description" content="工作完毕 多多总结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ouuy1zpt1.bkt.clouddn.com/butterknifeNull.png">
-<meta property="og:updated_time" content="2017-08-19T09:31:13.806Z">
+<meta property="og:updated_time" content="2017-09-14T14:10:42.933Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ButterKnife的学习使用">
-<meta name="twitter:description" content="ButterKnife是一款View注解框架，方便我们使用控件，而不需要频繁的findViewById">
-<meta name="twitter:image" content="http://ouuy1zpt1.bkt.clouddn.com/butterknifeNull.png">
+<meta name="twitter:title" content="工作总结-蓝牙手环">
+<meta name="twitter:description" content="工作完毕 多多总结">
 
 
 
@@ -134,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/19/butterKnife/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/14/summaryBle/"/>
 
 
 
 
 
-  <title>ButterKnife的学习使用 | AlfredJin</title>
+  <title>工作总结-蓝牙手环 | AlfredJin</title>
   
 
 
@@ -258,8 +256,8 @@
   
   
 
-  <article class="post post-type-android " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/butterKnife/">
+  <article class="post post-type-Android " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/14/summaryBle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alfredjin">
@@ -276,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ButterKnife的学习使用</h1>
+          <h1 class="post-title" itemprop="name headline">工作总结-蓝牙手环</h1>
         
 
         <div class="post-meta">
@@ -288,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T17:31:13+08:00">
-                2017-08-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T22:10:42+08:00">
+                2017-09-14
               </time>
             
 
@@ -311,8 +309,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -335,7 +333,7 @@
 
           
               <div class="post-description">
-                  ButterKnife是一款View注解框架，方便我们使用控件，而不需要频繁的findViewById
+                  工作完毕 多多总结
               </div>
           
 
@@ -349,14 +347,14 @@
       
 
       
-        <p>根据官方Github中的介绍，我们想使用ButterKnife需要做如下准备<br>在Project的Gradle中添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">        classpath &apos;com.android.tools.build:gradle:2.3.3&apos;</div><div class="line"></div><div class="line">        classpath &apos;com.jakewharton:butterknife-gradle-plugin:8.8.0&apos;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>在APP的Gradle中添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.jakewharton.butterknife&apos;</div><div class="line"></div><div class="line">dependencies &#123;</div><div class="line">    ...</div><div class="line">    compile &apos;com.jakewharton:butterknife:8.8.0&apos;</div><div class="line">    annotationProcessor &apos;com.jakewharton:butterknife-compiler:8.8.0&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>官方文档中有添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.android.library&apos;</div></pre></td></tr></table></figure></p>
-<p>但是在我自己测试不能写，会出错的</p>
-<p>之后在代码中使用ButterKnife<br>在MainActivity的OnCreate方法中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ButterKnife.bind(this);</div></pre></td></tr></table></figure></p>
-<p> 之后就可以做自己的操作了<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@BindView(R2.id.userName)</div><div class="line">   EditText userName;</div><div class="line"></div><div class="line">   @BindView(R2.id.password)</div><div class="line">   EditText password;</div><div class="line"></div><div class="line">  @BindView(R2.id.btn_login)</div><div class="line">   Button login;</div></pre></td></tr></table></figure></p>
-<p>！特别注意：使用ButterKnife，控件不能声明成private或static,否则</p>
-<p><img src="http://ouuy1zpt1.bkt.clouddn.com/butterknifeNull.png" alt="null"></p>
+        <h1 id="工作总结–蓝牙手环"><a href="#工作总结–蓝牙手环" class="headerlink" title="工作总结–蓝牙手环"></a>工作总结–蓝牙手环</h1><p>这是我第一次真正参与机器人开发工作，工作是替换旧的手环SDK，换成新的，这本来是个比较轻松的工作，因为无需自己搭建整体架构，使用只需要研究下版本的SDK，然后封装可用的工具，最后将相应的位置的方法调用更新就可以了。然而这个任务我做了一个多星期才真正完成，所以写下这篇文章作为总结。</p>
+<p>在工作的时候自己瞎跑了很多弯道，做了很多无用功才导致自己完成效率这么慢，我所总结的有如下几点。</p>
+<h2 id="1-太浮躁"><a href="#1-太浮躁" class="headerlink" title="1.太浮躁"></a>1.太浮躁</h2><p>未能将旧的代码流程和逻辑梳理清楚，也没有将文档中的DEMO梳理完整就开始根据自己的臆测封装代码，然后就做了很多的无用功，导致在将工具和原代码进行结合时出现很多差错。比如在流程中，并没有在选择设备界面直接连接手环，而我在调用时主观认为是在该Activity中调用的，导致连接完毕后立即断开了连接。</p>
+<h2 id="2-能使用旧的架构，就别自大的认为能够封装更好的"><a href="#2-能使用旧的架构，就别自大的认为能够封装更好的" class="headerlink" title="2.能使用旧的架构，就别自大的认为能够封装更好的"></a>2.能使用旧的架构，就别自大的认为能够封装更好的</h2><p>因为旧的代码流程不太熟悉，所以认为自己可以封装个更好的，然而，事实却是旧代码就是比你牛逼。然后根据自己的逻辑去写了个新的架构，很多代码都去替换，最后的结果是花费了四天时间没能完成一个连接设备的任务，最后根据俊哥的引导，花了半天时间研究旧代码的流程，又花费半天去完成了代码的结合，可以连接设备。所以，别人的代码虽然看不太懂，就是比你自己写要轻松很多。</p>
+<h2 id="3-一定要做好备份工作"><a href="#3-一定要做好备份工作" class="headerlink" title="3.一定要做好备份工作"></a>3.一定要做好备份工作</h2><p>在替换的过程中，因为不能直接在AS中进行开发，所以都是将代码复制到自己的文件夹中然后去更新旧文件夹中的内容。因为自己的疏忽，未能将旧版本的代码进行一次备份，导致中间过程中脑袋浆糊时不能研究之前的代码梳理流程，所以，备份是非常重要的。</p>
+<h2 id="4-工作要细心"><a href="#4-工作要细心" class="headerlink" title="4.工作要细心"></a>4.工作要细心</h2><p>在第五天基本就已经完成了所有功能，但是因为设备的连接和断开绑定的时候总会出现延迟，不能及时断开，之后就在调试这个功能。根据俊哥的思路，代码流程是进入选择界面后一切都是干净的环境，只有在绑定了设备后，服务才会开启连接设备等功能，之后我所采用的方法是，进入界面后断开所有设备的连接，通过先关闭设备的SDK中的关闭连接，再关闭蓝牙之后重启蓝牙的方式及时断开设备之间的通信，跳出界面后依旧按照之前的方式进行工作。但是工作中依然出现问题，那就是设备电量和线损值数据无法读取，而其他数据没什么问题。第一次出现这个问题是在及时断开连接时未调用新SDK的连接方法，只是调用了原本封装的蓝牙协议。第二次出现这个问题时，是重新启动后可以读取数据，但是在进入重新绑定的界面后，就无法读取这两个数据了。在新SDK中，这两个数据是通过调用SDK的方法，它们会发送一个读取电量的广播，之后接收广播并读取数据，通过打Log发现注册了广播但是未能接收到广播，和DEMO中的代码比较发现，在销毁资源时，将操作数据的几个置空了，DEMO中只是注销了广播，之后也通过这个方法可以获取到了数据。现在依旧不清楚为什么会出现这样的错误，因为注销后进行了init操作，在init操作中我们终归会获取到操作对象的。代码依旧需要在研究。就是这个操作耗费了两天时间。</p>
+<h2 id="5-要善于和他人沟通"><a href="#5-要善于和他人沟通" class="headerlink" title="5.要善于和他人沟通"></a>5.要善于和他人沟通</h2><p>都说工作时沟通是至关重要的，之前并不怎么理解，通过这次的教训后相当理解。开始自己领导任务后直接自己开始琢磨了，很多都是自己抠出来的，也有很多都是绕了个大弯，也导致自己最后浪费了很多时间，耽误了很多任务，而每次和俊哥交流后，都有一个新的认识，让工作更是事半功倍，所以，沟通真的是很重要，有问题及时沟通反应，毕竟自己的能力自己清楚，虚心学习，才是王道。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>工作不像学习那么轻松，规定时间内完成就要赶紧完成，拖了一天，这是一次教训，工作经验没那么多，但是不能因此失去信心，要加紧学习，才能够更快的成长。</p>
 
       
     </div>
@@ -386,7 +384,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/android/" rel="tag"># android</a>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
         </div>
       
@@ -399,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/19/mvp/" rel="next" title="MVP学习使用">
-                <i class="fa fa-chevron-left"></i> MVP学习使用
+              <a href="/2017/09/02/bluetooth/" rel="next" title="蓝牙学习">
+                <i class="fa fa-chevron-left"></i> 蓝牙学习
               </a>
             
           </div>
@@ -408,10 +406,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/19/kotlin/" rel="prev" title="k">
-                k <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -459,8 +453,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -522,6 +525,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工作总结–蓝牙手环"><span class="nav-number">1.</span> <span class="nav-text">工作总结–蓝牙手环</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-太浮躁"><span class="nav-number">1.1.</span> <span class="nav-text">1.太浮躁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-能使用旧的架构，就别自大的认为能够封装更好的"><span class="nav-number">1.2.</span> <span class="nav-text">2.能使用旧的架构，就别自大的认为能够封装更好的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-一定要做好备份工作"><span class="nav-number">1.3.</span> <span class="nav-text">3.一定要做好备份工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-工作要细心"><span class="nav-number">1.4.</span> <span class="nav-text">4.工作要细心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-要善于和他人沟通"><span class="nav-number">1.5.</span> <span class="nav-text">5.要善于和他人沟通</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
