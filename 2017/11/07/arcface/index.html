@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="近期人脸相关的开发,对此做笔记(基于软虹人脸识别)">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人脸注册">
+<meta property="og:url" content="http://yoursite.com/2017/11/07/arcface/index.html">
+<meta property="og:site_name" content="AlfredJin">
+<meta property="og:description" content="近期人脸相关的开发,对此做笔记(基于软虹人脸识别)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-07T14:01:33.614Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="人脸注册">
+<meta name="twitter:description" content="近期人脸相关的开发,对此做笔记(基于软虹人脸识别)">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/07/arcface/"/>
+
+
+
+
+
+  <title>人脸注册 | AlfredJin</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AlfredJin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-Android " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/07/arcface/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alfredjin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlfredJin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">人脸注册</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T22:01:33+08:00">
+                2017-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  近期人脸相关的开发,对此做笔记(基于软虹人脸识别)
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="人脸识别"><a href="#人脸识别" class="headerlink" title="人脸识别"></a>人脸识别</h1><p>使用的人脸识别引擎为软虹人脸识别(ArcFace)<br>ArcFace可以离线识别，虽然识别率并不是特别高，但是实用性确实必不可少</p>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p>1、注册人脸信息</p>
+<p>2、检测人脸信息</p>
+<h2 id="图片注册"><a href="#图片注册" class="headerlink" title="图片注册"></a>图片注册</h2><p>图片注册需要我们使用相册，选取相册中的图片，然后进行识别、保存、检测等功能。</p>
+<p>在Android中使用相册</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 图片注册</div><div class="line"> */</div><div class="line">private void registerForPic() &#123;</div><div class="line">    Intent getImageByalbum = new Intent(Intent.ACTION_GET_CONTENT);</div><div class="line">    getImageByalbum.addCategory(Intent.CATEGORY_OPENABLE);</div><div class="line">    getImageByalbum.setType(&quot;image/jpeg&quot;);</div><div class="line">    startActivityForResult(getImageByalbum, REQUEST_CODE_IMAGE_OP);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>调用系统的相册，点击后返回，所以在onActivityResult中需要进行如下操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">if (requestCode == REQUEST_CODE_IMAGE_OP &amp;&amp; resultCode == RESULT_OK) &#123;</div><div class="line">    mPath = data.getData();</div><div class="line">    String file = getPath(mPath);</div><div class="line">    Bitmap bmp = FaceUtil.decodeImage(file);</div><div class="line">    if (bmp == null || bmp.getWidth() &lt;= 0 || bmp.getHeight() &lt;= 0) &#123;</div><div class="line">        Toast.makeText(MainActivity.this, &quot;请选择正确图片&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">    &#125; else &#123;</div><div class="line">        startOilPainting(file);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>通过此方法可以获取到点击后传递过来的图片，并根据点击的图片的 正确与否进行判断和提示。</p>
+<p>如果传递的图片信息是正确的，那么就可以进行如下操作，去注册界面进行注册操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">private void startOilPainting(String file) &#123;</div><div class="line">    Intent it = new Intent(MainActivity.this, RegisterActivity.class);</div><div class="line">    Bundle bundle = new Bundle();</div><div class="line">    bundle.putString(&quot;imagePath&quot;, file);</div><div class="line">    it.putExtras(bundle);</div><div class="line">    startActivityForResult(it, REQUEST_CODE_OP);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="相机注册"><a href="#相机注册" class="headerlink" title="相机注册"></a>相机注册</h2><p>如果选择相机注册<br>那么首先需要调取系统相机，然后拍照，获取拍摄的照片，进行识别和认证注册等操作。</p>
+<p>使用系统相机的方法为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">/**</div><div class="line"> * 拍照注册</div><div class="line"> */</div><div class="line">private void registerForCam() &#123;</div><div class="line">    Intent getImageByCamera = new Intent(</div><div class="line">            &quot;android.media.action.IMAGE_CAPTURE&quot;);</div><div class="line">    ContentValues values = new ContentValues();</div><div class="line">    values.put(MediaStore.Images.Media.MIME_TYPE, &quot;image/jpeg&quot;);</div><div class="line">    mPath = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);</div><div class="line">    getImageByCamera.putExtra(MediaStore.EXTRA_OUTPUT, mPath);</div><div class="line">    startActivityForResult(getImageByCamera, REQUEST_CODE_IMAGE_CAMERA);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>此方法是插入一个新的图片到相册，并传递到后边进行其他操作，这样会出现一个问题，那就是如果点击进入了系统相机，未拍照或者拍照后取消，系统相册会默认插入一条数据，显示无缩略图，如果点击确认，会出现两张相同的照片。</p>
+<p>跳转到系统相机并且拍照完成后，获取到上边插入时得到的Uri,并且进行分析操作，然后解析Uri,得到t图片路径</p>
+<p>之后可以根据图片路径获取到图片信息，然后进行和选择图片操作相同得到操作。</p>
+<h2 id="解决相机注册拍照后两张图片的问题"><a href="#解决相机注册拍照后两张图片的问题" class="headerlink" title="解决相机注册拍照后两张图片的问题"></a>解决相机注册拍照后两张图片的问题</h2><p>产生两张图片的原因就是上边已经叙述了，所以就上述原因可以解决的方案有两种：</p>
+<p>一、不插入图片到相册中。</p>
+<p>二、插入图片到相册后删除另一张。</p>
+<p>方案一：</p>
+<p>不新建图像插入相册，就意味着我们需要拿到系统的图片，经过在网络上搜索到的答案，当我们跳转到系统相机并且返回到系统后，可以通过(Bitmap)bundle.getData(“data”)的方式得到Bitmap图像，然而这样传输的数据会比较慢，还是直接传输路径来的实在，并且，我们后边也需要路径。虽然可以，但不建议。</p>
+<p>方案二：<br>方案二比较暴力，就是在进入相机并且返回到主界面后，删除ID值最大的那张图片，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">if (requestCode == REQUEST_CODE_IMAGE_CAMERA) &#123;</div><div class="line">  boolean imgResult = deleteTempImg();</div><div class="line">  Log.e(FaceUtil.TAG, &quot;删除 == &quot; + imgResult);</div><div class="line">  if (resultCode == RESULT_OK) &#123;</div><div class="line">    String file = getPath(mPath);</div><div class="line">    startOilPainting(file);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>代码解读：</p>
+<p>如果我们是从相机界面回来，那么我们就删除ID值最大的那张图片，如果点击的OK，那么就传递该图片到注册界面。</p>
+<p>删除相册图片的代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">private boolean deleteTempImg() &#123;</div><div class="line">    Cursor cursor = getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,</div><div class="line">            new String[]&#123;MediaStore.Images.Media._ID, MediaStore.Images.Media.DATA&#125;,</div><div class="line">            MediaStore.Images.Media.MIME_TYPE + &quot;=? OR &quot; + MediaStore.Images.Media.MIME_TYPE + &quot;=?&quot;,</div><div class="line">            new String[]&#123;&quot;image/jpeg&quot;, &quot;image/png&quot;&#125;, MediaStore.Images.Media._ID + &quot; DESC&quot;);</div><div class="line">    String name = null;</div><div class="line">    long imgId = 0;</div><div class="line">    if (cursor != null) &#123;</div><div class="line">        cursor.moveToFirst();</div><div class="line">        imgId = cursor.getLong(cursor.getColumnIndex(MediaStore.Images.Media._ID));</div><div class="line">        name = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));</div><div class="line">        cursor.close();</div><div class="line">    &#125;</div><div class="line">    Uri contentUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;</div><div class="line">    Uri uri = ContentUris.withAppendedId(contentUri, imgId);</div><div class="line">    int count = getContentResolver().delete(uri, null, null);</div><div class="line"></div><div class="line">    return count == 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/07/adbcmd/" rel="next" title="ADB常用命令">
+                <i class="fa fa-chevron-left"></i> ADB常用命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/07/chrome/" rel="prev" title="Chrome浏览器莫名打开hao123的主页">
+                Chrome浏览器莫名打开hao123的主页 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Alfredjin" />
+          <p class="site-author-name" itemprop="name">Alfredjin</p>
+           
+              <p class="site-description motion-element" itemprop="description">无非就是把枯燥留给自己。。。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#人脸识别"><span class="nav-number">1.</span> <span class="nav-text">人脸识别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作流程"><span class="nav-number">1.1.</span> <span class="nav-text">工作流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片注册"><span class="nav-number">1.2.</span> <span class="nav-text">图片注册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相机注册"><span class="nav-number">1.3.</span> <span class="nav-text">相机注册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决相机注册拍照后两张图片的问题"><span class="nav-number">1.4.</span> <span class="nav-text">解决相机注册拍照后两张图片的问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfredjin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
