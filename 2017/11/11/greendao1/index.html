@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="GreenDao是一款简单易用且性能好的SQLite ORM 框架">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GreenDao的学习使用">
+<meta property="og:url" content="http://yoursite.com/2017/11/11/greendao1/index.html">
+<meta property="og:site_name" content="AlfredJin">
+<meta property="og:description" content="GreenDao是一款简单易用且性能好的SQLite ORM 框架">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ouuy1zpt1.bkt.clouddn.com/greendaojg.png">
+<meta property="og:image" content="http://ouuy1zpt1.bkt.clouddn.com/greenDao.gif">
+<meta property="og:updated_time" content="2017-11-11T03:37:07.105Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GreenDao的学习使用">
+<meta name="twitter:description" content="GreenDao是一款简单易用且性能好的SQLite ORM 框架">
+<meta name="twitter:image" content="http://ouuy1zpt1.bkt.clouddn.com/greendaojg.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/11/greendao1/"/>
+
+
+
+
+
+  <title>GreenDao的学习使用 | AlfredJin</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AlfredJin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-Android " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/11/greendao1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alfredjin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlfredJin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">GreenDao的学习使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-11T11:40:53+08:00">
+                2017-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  GreenDao是一款简单易用且性能好的SQLite ORM 框架
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="GreenDao的学习使用"><a href="#GreenDao的学习使用" class="headerlink" title="GreenDao的学习使用"></a>GreenDao的学习使用</h1><h2 id="GreenDao简介"><a href="#GreenDao简介" class="headerlink" title="GreenDao简介"></a>GreenDao简介</h2><p>GreenDao是一款SQLite ORM框架，可以使面向关系的数据库转换成面向对象的数据库操作，方便我们开发等等。</p>
+<h2 id="配置Gradle"><a href="#配置Gradle" class="headerlink" title="配置Gradle"></a>配置Gradle</h2><p>这里配置Gradle需要配置Project和Model</p>
+<h3 id="Project-Gradle-配置"><a href="#Project-Gradle-配置" class="headerlink" title="Project Gradle 配置"></a>Project Gradle 配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">        classpath &apos;org.greenrobot:greendao-gradle-plugin:3.2.1&apos;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="Model-Gradle配置"><a href="#Model-Gradle配置" class="headerlink" title="Model Gradle配置"></a>Model Gradle配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;org.greenrobot.greendao&apos;</div><div class="line">android&#123;</div><div class="line">  /*针对greenDao的一些配置*/</div><div class="line">    greendao &#123;</div><div class="line">        schemaVersion 1 //数据库版本号</div><div class="line">        daoPackage &apos;com.alfredjin.testframe.greendao.gen&apos; //自动生成的工具类的包名</div><div class="line">        targetGenDir &apos;src/main/java&apos; //路径</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">dependencies &#123;</div><div class="line">    implementation &apos;org.greenrobot:greendao:3.2.2&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这期间可能会出错，只需要clean下Project就可以了</p>
+<h2 id="写Bean类"><a href="#写Bean类" class="headerlink" title="写Bean类"></a>写Bean类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@Entity</div><div class="line">public class User &#123;</div><div class="line">    @Id</div><div class="line">    private long id;</div><div class="line">    private String name;</div><div class="line"></div><div class="line">    @Generated(hash = 1144922831)</div><div class="line">    public User(long id, String name) &#123;</div><div class="line">        this.id = id;</div><div class="line">        this.name = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Generated(hash = 586692638)</div><div class="line">    public User() &#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public long getId() &#123;</div><div class="line">        return id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void setId(long id) &#123;</div><div class="line">        this.id = id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getName() &#123;</div><div class="line">        return name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void setName(String name) &#123;</div><div class="line">        this.name = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public String toString() &#123;</div><div class="line">        return &quot;User&#123;&quot; +</div><div class="line">                &quot;id=&quot; + id +</div><div class="line">                &quot;, name=&apos;&quot; + name + &apos;\&apos;&apos; +</div><div class="line">                &apos;&#125;&apos;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>@Entity 即是实体类的注解，需要以此来绑定我们的User实体类，方便GreenDao创建对应的数据库</p>
+<p> @Generated 构造方法上写这个注解，虽然现在有(hash = 586692638)这部分，但不是我写的，而是自动生成的</p>
+<p>写好Bean类后，就可以点击Android Studio 的Build -&gt; Make Project，之后会创建出如下这样的文件路径</p>
+<p><img src="http://ouuy1zpt1.bkt.clouddn.com/greendaojg.png" alt="">;</p>
+<h2 id="进行操作"><a href="#进行操作" class="headerlink" title="进行操作"></a>进行操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div></pre></td><td class="code"><pre><div class="line">package com.alfredjin.testframe;</div><div class="line"></div><div class="line">import android.annotation.SuppressLint;</div><div class="line">import android.content.Context;</div><div class="line">import android.database.sqlite.SQLiteDatabase;</div><div class="line">import android.support.v7.app.AppCompatActivity;</div><div class="line">import android.os.Bundle;</div><div class="line">import android.text.TextUtils;</div><div class="line">import android.util.Log;</div><div class="line">import android.widget.Button;</div><div class="line">import android.widget.EditText;</div><div class="line">import android.widget.TextView;</div><div class="line">import android.widget.Toast;</div><div class="line"></div><div class="line">import com.alfredjin.testframe.bean.User;</div><div class="line">import com.alfredjin.testframe.greendao.gen.DaoMaster;</div><div class="line">import com.alfredjin.testframe.greendao.gen.DaoSession;</div><div class="line">import com.alfredjin.testframe.greendao.gen.UserDao;</div><div class="line"></div><div class="line">import org.greenrobot.greendao.query.QueryBuilder;</div><div class="line"></div><div class="line">import java.util.List;</div><div class="line"></div><div class="line">import butterknife.BindView;</div><div class="line">import butterknife.ButterKnife;</div><div class="line"></div><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line">    @BindView(R.id.et_id)</div><div class="line">    EditText etID;</div><div class="line">    @BindView(R.id.et_name)</div><div class="line">    EditText etName;</div><div class="line">    @BindView(R.id.btn_save)</div><div class="line">    Button btnSave;</div><div class="line">    @BindView(R.id.btn_delete)</div><div class="line">    Button btnDelete;</div><div class="line">    @BindView(R.id.btn_update)</div><div class="line">    Button btnUpdate;</div><div class="line">    @BindView(R.id.btn_select)</div><div class="line">    Button btnSelect;</div><div class="line">    @BindView(R.id.tv_show)</div><div class="line">    TextView tvShow;</div><div class="line"></div><div class="line">    private Context mContext;</div><div class="line">    private UserDao userDao;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        mContext = this;</div><div class="line">        ButterKnife.bind(this);</div><div class="line">        initDbHelp();</div><div class="line"></div><div class="line">        initListener();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private void initListener() &#123;</div><div class="line">        btnSave.setOnClickListener(v -&gt; &#123;</div><div class="line">            saveData();</div><div class="line">        &#125;);</div><div class="line">        btnDelete.setOnClickListener(v -&gt; &#123;</div><div class="line">            deleteData();</div><div class="line">        &#125;);</div><div class="line">        btnUpdate.setOnClickListener(v -&gt; &#123;</div><div class="line">            updateData();</div><div class="line">        &#125;);</div><div class="line">        btnSelect.setOnClickListener(v -&gt; &#123;</div><div class="line">            findData();</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 初始化数据库相关</div><div class="line">     */</div><div class="line">    private void initDbHelp() &#123;</div><div class="line">        DaoMaster.DevOpenHelper openHelper = new DaoMaster.DevOpenHelper</div><div class="line">                (mContext, &quot;user.db&quot;, null);</div><div class="line">        SQLiteDatabase database = openHelper.getWritableDatabase();</div><div class="line">        DaoMaster daoMaster = new DaoMaster(database);</div><div class="line">        DaoSession daoSession = daoMaster.newSession();</div><div class="line">        //获取userDao操作类</div><div class="line">        userDao = daoSession.getUserDao();</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    /**</div><div class="line">     * 查询数据</div><div class="line">     */</div><div class="line">    @SuppressLint(&quot;SetTextI18n&quot;)</div><div class="line">    public void findData() &#123;</div><div class="line">        String id = etID.getText().toString();</div><div class="line">        if (!TextUtils.isEmpty(id)) &#123;</div><div class="line">            QueryBuilder&lt;User&gt; queryBuilder = userDao.queryBuilder();</div><div class="line">            List&lt;User&gt; userList = queryBuilder.where(UserDao.Properties.Id.eq(id)).list();</div><div class="line">            if (userList.size() &gt; 0) &#123;</div><div class="line">                for (User user : userList) &#123;</div><div class="line">                    tvShow.setText(user.toString() + &quot;\n&quot;);</div><div class="line">                &#125;</div><div class="line">            &#125; else &#123;</div><div class="line">                tvShow.setText(&quot;不存在数据&quot;);</div><div class="line">            &#125;</div><div class="line">        &#125; else &#123;</div><div class="line">            //查询所有数据</div><div class="line">            QueryBuilder&lt;User&gt; queryBuilder = userDao.queryBuilder();</div><div class="line">            List&lt;User&gt; userList = queryBuilder.list();</div><div class="line">            StringBuilder stringBuilder = new StringBuilder();</div><div class="line">            if (userList.size() &gt; 0) &#123;</div><div class="line">                for (User user : userList) &#123;</div><div class="line">                    stringBuilder.append(user.toString()).append(&quot;\n&quot;);</div><div class="line">                &#125;</div><div class="line">                tvShow.setText(stringBuilder.toString());</div><div class="line">            &#125; else &#123;</div><div class="line">                tvShow.setText(&quot;不存在数据&quot;);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 保存数据</div><div class="line">     */</div><div class="line">    @SuppressLint(&quot;SetTextI18n&quot;)</div><div class="line">    public void saveData() &#123;</div><div class="line">        String strID = etID.getText().toString().trim();</div><div class="line">        String strName = etName.getText().toString().trim();</div><div class="line">        if (TextUtils.isEmpty(strID)) &#123;</div><div class="line">            showToast(&quot;ID不能为空&quot;);</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">        if (TextUtils.isEmpty(strName)) &#123;</div><div class="line">            showToast(&quot;name不能为空&quot;);</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">        User user = new User(Long.valueOf(strID), strName);</div><div class="line">        long userID = userDao.insert(user);</div><div class="line">        tvShow.setText(&quot;插入的UserID == &quot; + userID);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 删除数据</div><div class="line">     */</div><div class="line">    public void deleteData() &#123;</div><div class="line">        String strID = etID.getText().toString().trim();</div><div class="line">        if (TextUtils.isEmpty(strID)) &#123;</div><div class="line">            showToast(&quot;请输入删除的ID&quot;);</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">        userDao.deleteByKey(Long.valueOf(strID));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 更新数据</div><div class="line">     */</div><div class="line">    public void updateData() &#123;</div><div class="line">        String strID = etID.getText().toString().trim();</div><div class="line">        String strName = etName.getText().toString().trim();</div><div class="line">        if (TextUtils.isEmpty(strID)) &#123;</div><div class="line">            showToast(&quot;ID不能为空&quot;);</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">        if (TextUtils.isEmpty(strName)) &#123;</div><div class="line">            showToast(&quot;name不能为空&quot;);</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">        User user = new User(Long.valueOf(strID), strName);</div><div class="line">        userDao.update(user);</div><div class="line">        findData();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void showToast(String msg) &#123;</div><div class="line">        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以自动忽略其他功能，只看GreenDao先关的功能</p>
+<h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">User user = new User(Long.valueOf(strID), strName);</div><div class="line">long userID = userDao.insert(user);</div></pre></td></tr></table></figure>
+<h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">userDao.deleteByKey(Long.valueOf(strID));</div></pre></td></tr></table></figure>
+<p>也可以删全部<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">userDao.deleteAll();</div></pre></td></tr></table></figure></p>
+<h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">userDao.update(user);</div></pre></td></tr></table></figure>
+<h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><p>查一个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">QueryBuilder&lt;User&gt; queryBuilder = userDao.queryBuilder();</div><div class="line">List&lt;User&gt; userList = queryBuilder.where(UserDao.Properties.Id.eq(id)).list();</div></pre></td></tr></table></figure></p>
+<p>查全部<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">QueryBuilder&lt;User&gt; queryBuilder = userDao.queryBuilder();</div><div class="line">List&lt;User&gt; userList = queryBuilder.list();</div></pre></td></tr></table></figure></p>
+<h2 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h2><p><img src="http://ouuy1zpt1.bkt.clouddn.com/greenDao.gif" alt=""></p>
+<p>简单的用法就是这些，更多功能和技巧，还需要不断的练习</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/07/mkwithv7/" rel="next" title="在Android.mk文件中引用v7包">
+                <i class="fa fa-chevron-left"></i> 在Android.mk文件中引用v7包
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Alfredjin" />
+          <p class="site-author-name" itemprop="name">Alfredjin</p>
+           
+              <p class="site-description motion-element" itemprop="description">无非就是把枯燥留给自己。。。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GreenDao的学习使用"><span class="nav-number">1.</span> <span class="nav-text">GreenDao的学习使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GreenDao简介"><span class="nav-number">1.1.</span> <span class="nav-text">GreenDao简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Gradle"><span class="nav-number">1.2.</span> <span class="nav-text">配置Gradle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Project-Gradle-配置"><span class="nav-number">1.2.1.</span> <span class="nav-text">Project Gradle 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Gradle配置"><span class="nav-number">1.2.2.</span> <span class="nav-text">Model Gradle配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写Bean类"><span class="nav-number">1.3.</span> <span class="nav-text">写Bean类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进行操作"><span class="nav-number">1.4.</span> <span class="nav-text">进行操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增"><span class="nav-number">1.4.1.</span> <span class="nav-text">增</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删"><span class="nav-number">1.4.2.</span> <span class="nav-text">删</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改"><span class="nav-number">1.4.3.</span> <span class="nav-text">改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查"><span class="nav-number">1.4.4.</span> <span class="nav-text">查</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行效果"><span class="nav-number">1.5.</span> <span class="nav-text">运行效果</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfredjin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
