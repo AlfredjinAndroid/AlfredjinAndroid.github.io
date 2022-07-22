@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/alfred_flavor.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/alfred_flavor.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/alfred_flavor.png">
+  <link rel="mask-icon" href="/images/alfred_flavor.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="无非是把枯燥，留给自己">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alfred">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Alfred">
+<meta property="og:description" content="无非是把枯燥，留给自己">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Alfred Jin">
+<meta property="article:tag" content="Alfred">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Rust">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/page/2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/2/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Alfred</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Alfred</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Alfred’s pernal blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Alfred Jin</p>
+  <div class="site-description" itemprop="description">无非是把枯燥，留给自己</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/22/ruby/10.%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alfred Jin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="无非是把枯燥，留给自己">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Alfred">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/22/ruby/10.%E5%BC%95%E5%8F%B7%E7%9A%84%E5%8C%BA%E5%88%AB/" class="post-title-link" itemprop="url">10.引号的区别</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-22 00:10:00" itemprop="dateCreated datePublished" datetime="2022-02-22T00:10:00+08:00">2022-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-22 15:53:39" itemprop="dateModified" datetime="2022-07-22T15:53:39+08:00">2022-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Ruby/" itemprop="url" rel="index"><span itemprop="name">Ruby</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="引号的区别"><a href="#引号的区别" class="headerlink" title="引号的区别"></a>引号的区别</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>字符串中引号的使用<ul>
+<li>单引号</li>
+<li>双引号</li>
+<li>引号中的大括号(运算式)</li>
+</ul>
+</li>
+</ul>
+<h2 id="实战演习"><a href="#实战演习" class="headerlink" title="实战演习"></a>实战演习</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 风言风语NBA</span></span><br><span class="line">p1 = <span class="string">&quot;我是\n哈登&quot;</span></span><br><span class="line">p2 = <span class="string">&#x27;我是\n卡戴珊&#x27;</span></span><br><span class="line"></span><br><span class="line">puts p1</span><br><span class="line">puts p2</span><br><span class="line"></span><br><span class="line"><span class="comment"># MVP标准：180俱乐部(投篮50%,三分40%,罚球90%)</span></span><br><span class="line">mvp = <span class="string">&quot;<span class="subst">#&#123;<span class="number">50</span>+<span class="number">40</span>+<span class="number">90</span>&#125;</span>&quot;</span></span><br><span class="line">puts mvp</span><br><span class="line">mvp = <span class="string">&#x27;<span class="subst">#&#123;<span class="number">50</span>+<span class="number">40</span>+<span class="number">90</span>&#125;</span>&#x27;</span></span><br><span class="line">puts mvp</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/22/ruby/9.%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%9F%E8%BF%90%E7%AE%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alfred Jin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="无非是把枯燥，留给自己">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Alfred">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/22/ruby/9.%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%9F%E8%BF%90%E7%AE%97/" class="post-title-link" itemprop="url">9.字符串也运算</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-22 00:09:00" itemprop="dateCreated datePublished" datetime="2022-02-22T00:09:00+08:00">2022-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-22 15:53:34" itemprop="dateModified" datetime="2022-07-22T15:53:34+08:00">2022-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Ruby/" itemprop="url" rel="index"><span itemprop="name">Ruby</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="字符串也运算"><a href="#字符串也运算" class="headerlink" title="字符串也运算"></a>字符串也运算</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>+：字符连接</li>
+<li>&lt;&lt;：字符带入</li>
+<li>*：字符循环</li>
+</ul>
+<h2 id="实战演习"><a href="#实战演习" class="headerlink" title="实战演习"></a>实战演习</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># +：字符连接</span></span><br><span class="line">a = <span class="string">&quot;helo&quot;</span>;</span><br><span class="line">b = <span class="string">&quot;koma&quot;</span>;</span><br><span class="line">puts a + <span class="string">&quot; &quot;</span> + b;</span><br><span class="line"></span><br><span class="line"><span class="comment"># &lt;&lt;：字符带入</span></span><br><span class="line">a &lt;&lt; b</span><br><span class="line">puts a</span><br><span class="line">puts b</span><br><span class="line"></span><br><span class="line"><span class="comment"># *：字符循环</span></span><br><span class="line">a=<span class="string">&quot;A&quot;</span></span><br><span class="line">puts a*<span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/22/ruby/8.%E4%B8%89%E9%A1%B9%E8%BF%90%E7%AE%97%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alfred Jin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="无非是把枯燥，留给自己">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Alfred">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/22/ruby/8.%E4%B8%89%E9%A1%B9%E8%BF%90%E7%AE%97%E5%BC%8F/" class="post-title-link" itemprop="url">8.三项运算式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-22 00:08:00" itemprop="dateCreated datePublished" datetime="2022-02-22T00:08:00+08:00">2022-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-22 15:53:30" itemprop="dateModified" datetime="2022-07-22T15:53:30+08:00">2022-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Ruby/" itemprop="url" rel="index"><span itemprop="name">Ruby</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="三项运算式"><a href="#三项运算式" class="headerlink" title="三项运算式"></a>三项运算式</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>条件 ？处理1:处理2</li>
+</ul>
+<h2 id="表达式说明"><a href="#表达式说明" class="headerlink" title="表达式说明"></a>表达式说明</h2><p>条件：逻辑表达式，返回bool类型值<br>处理1：当条件为<strong>真</strong>时执行<br>处理2：当条件为<strong>假</strong>时执行</p>
+<h2 id="实战演习"><a href="#实战演习" class="headerlink" title="实战演习"></a>实战演习</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#例：什么是NBA顶级球员</span></span><br><span class="line">point = <span class="number">30</span> <span class="comment">#场均得分</span></span><br><span class="line"><span class="keyword">if</span> point &gt;= <span class="number">30</span> <span class="keyword">then</span></span><br><span class="line">    puts <span class="string">&quot;MVP球员&quot;</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    puts <span class="string">&quot;一般球员&quot;</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#三项运算式写法</span></span><br><span class="line">puts point &gt;= <span class="number">30</span> ? <span class="string">&quot;MVP球员&quot;</span> : <span class="string">&quot;一般球员&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/22/ruby/7.Ruby%E7%9A%84%E6%93%8D%E4%BD%9C%E7%AC%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alfred Jin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="无非是把枯燥，留给自己">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Alfred">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/22/ruby/7.Ruby%E7%9A%84%E6%93%8D%E4%BD%9C%E7%AC%A6/" class="post-title-link" itemprop="url">7.Ruby的操作符</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-22 00:07:00" itemprop="dateCreated datePublished" datetime="2022-02-22T00:07:00+08:00">2022-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-22 15:53:27" itemprop="dateModified" datetime="2022-07-22T15:53:27+08:00">2022-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Ruby/" itemprop="url" rel="index"><span itemprop="name">Ruby</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Ruby的操作符"><a href="#Ruby的操作符" class="headerlink" title="Ruby的操作符"></a>Ruby的操作符</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>运算操作符<ul>
+<li>+：加法</li>
+<li>-：减法</li>
+<li>*：乘法</li>
+<li>**：阶乘</li>
+<li>/：除法</li>
+<li>%：取余</li>
+</ul>
+</li>
+<li>比较操作符<ul>
+<li>==：等于</li>
+<li>!=：不等于</li>
+<li>＞：大于</li>
+<li>＞=：大于等于</li>
+<li>＜：小于</li>
+<li>＜=：小于等于</li>
+</ul>
+</li>
+<li>逻辑操作符<ul>
+<li>&amp;&amp;：逻辑与</li>
+<li>||：逻辑或</li>
+<li>！：逻辑非</li>
+</ul>
+</li>
+<li>位运算操作符(不常用)<ul>
+<li>&amp;：与AND</li>
+<li>|：或OR</li>
+<li>^：亦或</li>
+<li>~：位反转</li>
+<li>＜＜：左移位</li>
+<li>＞＞：右移位</li>
+</ul>
+</li>
+</ul>
+<h2 id="实战演习"><a href="#实战演习" class="headerlink" title="实战演习"></a>实战演习</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ irb</span><br><span class="line"><span class="comment"># **：阶乘</span></span><br><span class="line">&gt; 2**3</span><br><span class="line"><span class="comment"># %：取余</span></span><br><span class="line">&gt; 10%3</span><br><span class="line"><span class="comment"># !=：不等于</span></span><br><span class="line">&gt; <span class="keyword">if</span> 1 != 2 <span class="keyword">then</span></span><br><span class="line">&gt; puts <span class="string">&quot;yes&quot;</span></span><br><span class="line">&gt; <span class="keyword">else</span></span><br><span class="line">&gt; puts <span class="string">&quot;no&quot;</span></span><br><span class="line">&gt; end</span><br><span class="line"><span class="comment"># ＜=：小于等于</span></span><br><span class="line">&gt; a=5</span><br><span class="line">&gt; b=10</span><br><span class="line">&gt; <span class="keyword">if</span> a&lt;=b <span class="keyword">then</span> puts <span class="string">&quot;ok&quot;</span> end</span><br><span class="line">&gt; b=5</span><br><span class="line">&gt; <span class="keyword">if</span> a&lt;=b <span class="keyword">then</span> puts <span class="string">&quot;ok&quot;</span> end</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/22/ruby/6.%E5%A4%87%E6%B3%A8%E7%9A%84%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alfred Jin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="无非是把枯燥，留给自己">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Alfred">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/22/ruby/6.%E5%A4%87%E6%B3%A8%E7%9A%84%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">6.备注的使用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-22 00:06:00" itemprop="dateCreated datePublished" datetime="2022-02-22T00:06:00+08:00">2022-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-22 15:53:23" itemprop="dateModified" datetime="2022-07-22T15:53:23+08:00">2022-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Ruby/" itemprop="url" rel="index"><span itemprop="name">Ruby</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="备注的使用"><a href="#备注的使用" class="headerlink" title="备注的使用"></a>备注的使用</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>备注的使用<ul>
+<li>一行备注<ul>
+<li>#:井号备注</li>
+</ul>
+</li>
+<li>多行备注<ul>
+<li>“=begin…=end”</li>
+</ul>
+</li>
+<li>之后全备注<ul>
+<li>＿＿END＿＿</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="备注的使用-1"><a href="#备注的使用-1" class="headerlink" title="备注的使用"></a>备注的使用</h3><p>~~~ruby<br>#单行注释。</p>
+<p>=begin<br>文本注释/多行注释<br>=end</p>
+<p><strong>END</strong><br>之后所有内容全部都是备注。<br>。<br>。<br>。<br>。<br>。<br>。<br>。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/22/ruby/5.%E5%88%9D%E6%8E%A2%E6%95%B0%E7%BB%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alfred Jin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="无非是把枯燥，留给自己">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Alfred">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/22/ruby/5.%E5%88%9D%E6%8E%A2%E6%95%B0%E7%BB%84/" class="post-title-link" itemprop="url">5.初探数组</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-22 00:05:00" itemprop="dateCreated datePublished" datetime="2022-02-22T00:05:00+08:00">2022-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-22 15:53:19" itemprop="dateModified" datetime="2022-07-22T15:53:19+08:00">2022-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Ruby/" itemprop="url" rel="index"><span itemprop="name">Ruby</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="初探数组"><a href="#初探数组" class="headerlink" title="初探数组"></a>初探数组</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>数组定义</li>
+<li>数组循环</li>
+<li>数组连接</li>
+</ul>
+<h3 id="数组定义"><a href="#数组定义" class="headerlink" title="数组定义"></a>数组定义</h3><p>定义一个数组</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">games = [<span class="string">&quot;绝地逃生&quot;</span>, <span class="string">&quot;怪物猎人世界&quot;</span>, <span class="string">&quot;信长之野望大志&quot;</span>]</span><br><span class="line">puts games</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组循环"><a href="#数组循环" class="headerlink" title="数组循环"></a>数组循环</h3><p>循环数组的内容</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#方法1</span></span><br><span class="line">games.each <span class="keyword">do</span> |<span class="params">game</span>|</span><br><span class="line">    puts <span class="string">&quot;我爱&lt;&lt;<span class="subst">#&#123;game&#125;</span>&gt;&gt;&quot;</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">#方法2</span></span><br><span class="line">games.each_with_index <span class="keyword">do</span> |<span class="params">game,i</span>|</span><br><span class="line">    puts <span class="string">&quot;<span class="subst">#&#123;i&#125;</span>.<span class="subst">#&#123;game&#125;</span>&quot;</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组连接"><a href="#数组连接" class="headerlink" title="数组连接"></a>数组连接</h3><p>把数组的内容连接起来，一起输出</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">puts games.join(<span class="string">&quot;,&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="判断是否是一个数组"><a href="#判断是否是一个数组" class="headerlink" title="判断是否是一个数组"></a>判断是否是一个数组</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> games.respond_to?(<span class="string">&quot;each&quot;</span>) <span class="comment">#games.respond_to?(&quot;each_with_index&quot;)</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/22/ruby/4.%E4%BD%BF%E7%94%A8%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alfred Jin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="无非是把枯燥，留给自己">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Alfred">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/22/ruby/4.%E4%BD%BF%E7%94%A8%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7/" class="post-title-link" itemprop="url">4.使用对象属性</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-22 00:04:00" itemprop="dateCreated datePublished" datetime="2022-02-22T00:04:00+08:00">2022-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-22 15:53:12" itemprop="dateModified" datetime="2022-07-22T15:53:12+08:00">2022-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Ruby/" itemprop="url" rel="index"><span itemprop="name">Ruby</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="使用对象属性"><a href="#使用对象属性" class="headerlink" title="使用对象属性"></a>使用对象属性</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>attr_accessor:定义可存取对象的属性</li>
+</ul>
+<h3 id="attr-accessor"><a href="#attr-accessor" class="headerlink" title="attr_accessor"></a>attr_accessor</h3><p>提供了可供对象外部使用的属性。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Game</span></span><br><span class="line">    <span class="keyword">attr_accessor</span> <span class="symbol">:price</span> <span class="comment">#, :title</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">initialize</span>(<span class="params">title = <span class="string">&quot;怪物猎人世界&quot;</span>, price = <span class="number">200</span></span>)</span><br><span class="line">        <span class="variable">@title</span> = title</span><br><span class="line">        <span class="variable">@price</span> = price</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">show</span>()</span><br><span class="line">        puts <span class="string">&quot;标题: <span class="subst">#&#123;<span class="variable">@title</span>&#125;</span>&quot;</span></span><br><span class="line">        puts <span class="string">&quot;价格: <span class="subst">#&#123;<span class="variable">@price</span>&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">mygame = <span class="title class_">Game</span>.new()</span><br><span class="line">mygame.show()</span><br><span class="line"></span><br><span class="line">puts <span class="string">&quot;title is &quot;</span> + mygame.respond_to?(<span class="string">&quot;title&quot;</span>).to_s</span><br><span class="line">puts <span class="string">&quot;price is &quot;</span> + mygame.respond_to?(<span class="string">&quot;price&quot;</span>).to_s</span><br><span class="line"></span><br><span class="line"><span class="comment">#mygame.title = &quot;Super Mario World&quot;</span></span><br><span class="line">mygame.price = <span class="number">150</span></span><br><span class="line">mygame.show()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/22/ruby/3.%E7%9C%8B%E7%9C%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E9%87%8C%E9%9D%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alfred Jin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="无非是把枯燥，留给自己">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Alfred">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/22/ruby/3.%E7%9C%8B%E7%9C%8B%E5%AF%B9%E8%B1%A1%E7%9A%84%E9%87%8C%E9%9D%A2/" class="post-title-link" itemprop="url">3.看看对象的里面</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-22 00:03:00" itemprop="dateCreated datePublished" datetime="2022-02-22T00:03:00+08:00">2022-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-22 15:53:07" itemprop="dateModified" datetime="2022-07-22T15:53:07+08:00">2022-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Ruby/" itemprop="url" rel="index"><span itemprop="name">Ruby</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="看看对象的里面"><a href="#看看对象的里面" class="headerlink" title="看看对象的里面"></a>看看对象的里面</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>instance_methods(all:bool):列出对象(类)内部的方法</li>
+<li>respond_to?:调查对象的方法/属性是否可用</li>
+<li>send:执行对象的方法</li>
+</ul>
+<h3 id="instance-methods"><a href="#instance-methods" class="headerlink" title="instance_methods"></a>instance_methods</h3><p>列出对象(类)内部的可用方法，用于调查解析对象的使用。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Game</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">initialize</span>(<span class="params">title = <span class="string">&quot;怪物猎人世界&quot;</span>, price = <span class="number">200</span></span>)</span><br><span class="line">        <span class="variable">@title</span> = title</span><br><span class="line">        <span class="variable">@price</span> = price</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">show</span>()</span><br><span class="line">        puts <span class="string">&quot;标题: <span class="subst">#&#123;<span class="variable">@title</span>&#125;</span>&quot;</span></span><br><span class="line">        puts <span class="string">&quot;价格: <span class="subst">#&#123;<span class="variable">@price</span>&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">show2</span>()</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">show3</span>()</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">puts Game.instance_methods(<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># mhw = Game.new();</span></span><br><span class="line"><span class="comment"># mhw.show();</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="respond-to-send"><a href="#respond-to-send" class="headerlink" title="respond_to?/send"></a>respond_to?/send</h3><ul>
+<li>respond_to?:调查对象的方法/属性是否可用</li>
+<li>send:执行对象的方法</li>
+</ul>
+<p>结合这两个函数，可以进行一些设计模式的实现和开发。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">mario = <span class="title class_">Game</span>.new(<span class="string">&quot;超级马里奥&quot;</span>, <span class="number">350</span>);</span><br><span class="line"><span class="keyword">if</span> mario.respond_to?(<span class="string">&quot;show&quot;</span>) <span class="comment">#判断对象是否存在show方法</span></span><br><span class="line">    mario.send(<span class="string">&quot;show&quot;</span>)       <span class="comment">#执行指定的方法</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/22/ruby/2.%E6%90%9E%E5%AE%9A%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alfred Jin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="无非是把枯燥，留给自己">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Alfred">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/22/ruby/2.%E6%90%9E%E5%AE%9A%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">2.搞定一个对象</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-22 00:02:00" itemprop="dateCreated datePublished" datetime="2022-02-22T00:02:00+08:00">2022-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-22 15:52:57" itemprop="dateModified" datetime="2022-07-22T15:52:57+08:00">2022-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Ruby/" itemprop="url" rel="index"><span itemprop="name">Ruby</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="搞定一个对象"><a href="#搞定一个对象" class="headerlink" title="搞定一个对象"></a>搞定一个对象</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>Ruby不是单身，也有对象</li>
+</ul>
+<h2 id="Ruby对象"><a href="#Ruby对象" class="headerlink" title="Ruby对象"></a>Ruby对象</h2><p>@name是实例变量，能够被该类或者子类继承使用。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Player</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">initialize</span>(<span class="params">name = <span class="string">&quot;Koma&quot;</span></span>)</span><br><span class="line">        <span class="variable">@name</span> = name</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">show</span>()</span><br><span class="line">        puts <span class="string">&quot;player: <span class="subst">#&#123;<span class="variable">@name</span>&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">koma = <span class="title class_">Player</span>.new()</span><br><span class="line">koma.show()</span><br><span class="line"></span><br><span class="line">curry = <span class="title class_">Player</span>.new(<span class="string">&quot;Curry&quot;</span>)</span><br><span class="line">curry.show()</span><br><span class="line"></span><br><span class="line">harden = <span class="title class_">Player</span>.new(<span class="string">&quot;Harden&quot;</span>)</span><br><span class="line">harden.show()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/22/ruby/1.%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alfred Jin">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred">
+      <meta itemprop="description" content="无非是把枯燥，留给自己">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Alfred">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/22/ruby/1.%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">1.定义一个函数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-22 00:01:00" itemprop="dateCreated datePublished" datetime="2022-02-22T00:01:00+08:00">2022-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-22 16:10:28" itemprop="dateModified" datetime="2022-07-22T16:10:28+08:00">2022-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Ruby/" itemprop="url" rel="index"><span itemprop="name">Ruby</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>做一个函数</li>
+<li>传一个参数</li>
+<li>给一个默认值</li>
+</ul>
+<h3 id="做一个函数"><a href="#做一个函数" class="headerlink" title="做一个函数"></a>做一个函数</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sayHelo</span></span><br><span class="line">    puts <span class="string">&quot;Helo World.&quot;</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">sayHelo</span><br></pre></td></tr></table></figure>
+
+<h3 id="传一个参数"><a href="#传一个参数" class="headerlink" title="传一个参数"></a>传一个参数</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sayHelo</span>(<span class="params">name</span>)</span><br><span class="line">    puts <span class="string">&quot;Helo <span class="subst">#&#123;name&#125;</span>.&quot;</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#sayHelo</span></span><br><span class="line">sayHelo(<span class="string">&quot;John&quot;</span>)</span><br><span class="line">sayHelo(<span class="string">&quot;Mike&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="给一个默认值"><a href="#给一个默认值" class="headerlink" title="给一个默认值"></a>给一个默认值</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sayHelo</span>(<span class="params">name=<span class="string">&quot;Koma&quot;</span></span>)</span><br><span class="line">    puts <span class="string">&quot;Helo <span class="subst">#&#123;name&#125;</span>.&quot;</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">sayHelo</span><br><span class="line">sayHelo(<span class="string">&quot;Koma&quot;</span>)</span><br><span class="line">sayHelo(<span class="string">&quot;Mike&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Jin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
