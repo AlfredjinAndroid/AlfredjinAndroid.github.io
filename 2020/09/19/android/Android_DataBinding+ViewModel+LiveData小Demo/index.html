@@ -20,28 +20,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="无非是把枯燥，留给自己">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Alfred">
-<meta property="og:url" content="http://example.com/page/3/index.html">
+    <meta name="description" content="目标通过一个小案例学习使用Android DataBinding和JectPack组件。案例将实现加载Bing每日一图的功能。 成果 过程启用DataBinding1、APP的gradle文件中配置 1234567android&amp;#123;    ...    dataBinding &amp;#123;        enabled true    &amp;#125;    ...&amp;#125;  2、Kotl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android DataBinding+ViewModel+LiveData小Demo">
+<meta property="og:url" content="http://example.com/2020/09/19/android/Android_DataBinding+ViewModel+LiveData%E5%B0%8FDemo/index.html">
 <meta property="og:site_name" content="Alfred">
-<meta property="og:description" content="无非是把枯燥，留给自己">
+<meta property="og:description" content="目标通过一个小案例学习使用Android DataBinding和JectPack组件。案例将实现加载Bing每日一图的功能。 成果 过程启用DataBinding1、APP的gradle文件中配置 1234567android&amp;#123;    ...    dataBinding &amp;#123;        enabled true    &amp;#125;    ...&amp;#125;  2、Kotl">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6891588-d4ed8f6930ec01bd.gif?imageMogr2/auto-orient/strip">
+<meta property="article:published_time" content="2020-09-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-07-25T07:36:19.544Z">
 <meta property="article:author" content="Alfred Jin">
-<meta property="article:tag" content="Alfred">
 <meta property="article:tag" content="Android">
-<meta property="article:tag" content="Rust">
+<meta property="article:tag" content="Jetpack">
+<meta property="article:tag" content="Databinding">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/6891588-d4ed8f6930ec01bd.gif?imageMogr2/auto-orient/strip">
 
 
-<link rel="canonical" href="http://example.com/page/3/">
+<link rel="canonical" href="http://example.com/2020/09/19/android/Android_DataBinding+ViewModel+LiveData%E5%B0%8FDemo/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/3/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2020/09/19/android/Android_DataBinding+ViewModel+LiveData%E5%B0%8FDemo/","path":"2020/09/19/android/Android_DataBinding+ViewModel+LiveData小Demo/","title":"Android DataBinding+ViewModel+LiveData小Demo"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Alfred</title>
+<title>Android DataBinding+ViewModel+LiveData小Demo | Alfred</title>
   
 
 
@@ -71,7 +75,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Alfred</h1>
+      <p class="site-title">Alfred</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Alfred’s personal blog</p>
@@ -131,7 +135,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -144,6 +148,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87"><span class="nav-number">1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%90%E6%9E%9C"><span class="nav-number">2.</span> <span class="nav-text">成果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8DataBinding"><span class="nav-number">3.1.</span> <span class="nav-text">启用DataBinding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%9A%84%E5%BA%93"><span class="nav-number">3.2.</span> <span class="nav-text">使用的库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%9A%84%E5%B0%81%E8%A3%85"><span class="nav-number">3.3.</span> <span class="nav-text">一些简单的封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82"><span class="nav-number">3.4.</span> <span class="nav-text">网络请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ViewModel-LiveData"><span class="nav-number">3.5.</span> <span class="nav-text">ViewModel + LiveData</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#activity-main-xml"><span class="nav-number">3.6.</span> <span class="nav-text">activity_main.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BindingAdapter"><span class="nav-number">3.7.</span> <span class="nav-text">BindingAdapter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MainActivity"><span class="nav-number">3.8.</span> <span class="nav-text">MainActivity</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -206,16 +211,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/19/android/Android_DataBinding+ViewModel+LiveData%E5%B0%8FDemo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -229,13 +235,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Alfred">
+      <meta itemprop="name" content="Android DataBinding+ViewModel+LiveData小Demo | Alfred">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/09/19/android/Android_DataBinding+ViewModel+LiveData%E5%B0%8FDemo/" class="post-title-link" itemprop="url">Android DataBinding+ViewModel+LiveData小Demo</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Android DataBinding+ViewModel+LiveData小Demo
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -274,7 +280,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>通过一个小案例学习使用Android DataBinding和JectPack组件。<br>案例将实现加载Bing每日一图的功能。</p>
+        <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>通过一个小案例学习使用Android DataBinding和JectPack组件。<br>案例将实现加载Bing每日一图的功能。</p>
 <h2 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h2><p><img src="https://upload-images.jianshu.io/upload_images/6891588-d4ed8f6930ec01bd.gif?imageMogr2/auto-orient/strip" alt="test.gif"></p>
 <h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="启用DataBinding"><a href="#启用DataBinding" class="headerlink" title="启用DataBinding"></a>启用DataBinding</h3><p>1、APP的gradle文件中配置</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">android&#123;</span><br><span class="line">    ...</span><br><span class="line">    dataBinding &#123;</span><br><span class="line">        enabled true</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -313,7 +319,6 @@
 
 <h3 id="MainActivity"><a href="#MainActivity" class="headerlink" title="MainActivity"></a>MainActivity</h3><p>1、绑定ViewModel<br>2、绑定DataBinding<br>3、监听ViewModel的值变化<br>4、变化时修改Activity的title的值，并加载新图片<br>5、如果新值为空，那么加载提示信息  </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import android.arch.lifecycle.Observer</span><br><span class="line">import android.content.Context</span><br><span class="line">import android.databinding.DataBindingUtil</span><br><span class="line">import android.os.Bundle</span><br><span class="line">import android.support.v7.app.AppCompatActivity</span><br><span class="line">import android.view.View</span><br><span class="line">import android.widget.Toast</span><br><span class="line">import com.syxrobot.mvvmtest.databinding.ActivityMainBinding</span><br><span class="line"></span><br><span class="line">class MainActivity : AppCompatActivity() &#123;</span><br><span class="line"></span><br><span class="line">    private lateinit var mContext: Context</span><br><span class="line">    private lateinit var mBind: ActivityMainBinding</span><br><span class="line">    private lateinit var mViewModel: ImgViewModel</span><br><span class="line"></span><br><span class="line">    override fun onCreate(savedInstanceState: Bundle?) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState)</span><br><span class="line">        //1</span><br><span class="line">        mViewModel = bindViewModel()</span><br><span class="line">        //2</span><br><span class="line">        mBind = DataBindingUtil.setContentView(this, R.layout.activity_main)</span><br><span class="line">        mContext = this</span><br><span class="line">        //3</span><br><span class="line">        mViewModel.mData.observe(this, Observer&lt;Data&lt;ImgBean&gt;&gt; &#123;</span><br><span class="line">            //4</span><br><span class="line">            it?.data?.let &#123; ig -&gt;</span><br><span class="line">                mBind.img = ig</span><br><span class="line">                title = ig.copyright</span><br><span class="line">            &#125;</span><br><span class="line">            //5</span><br><span class="line">            it?.msg?.let &#123; msg -&gt; log(msg) &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        mViewModel.loadImg()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private fun log(msg: String) &#123;</span><br><span class="line">        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fun mainClick(v: View) &#123;</span><br><span class="line">        when (v.id) &#123;</span><br><span class="line">            R.id.btn_next -&gt; mViewModel.next()</span><br><span class="line">            R.id.btn_pre -&gt; mViewModel.pre()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
@@ -321,8 +326,26 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/Android/" rel="tag"># Android</a>
+              <a href="/tags/Jetpack/" rel="tag"># Jetpack</a>
+              <a href="/tags/Databinding/" rel="tag"># Databinding</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2018/07/19/kotlin/Kotlin-%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="Kotlin 中缀表达式">
+                  <i class="fa fa-chevron-left"></i> Kotlin 中缀表达式
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/02/22/ruby/1.%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0/" rel="next" title="1.定义一个函数">
+                  1.定义一个函数 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -330,107 +353,7 @@
 
 
 
-    
 
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2018/07/19/kotlin/Kotlin-%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/alfred_flavor.png">
-      <meta itemprop="name" content="Alfred Jin">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Alfred">
-      <meta itemprop="description" content="无非是把枯燥，留给自己">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Alfred">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/07/19/kotlin/Kotlin-%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-title-link" itemprop="url">Kotlin 中缀表达式</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-07-19 00:00:00" itemprop="dateCreated datePublished" datetime="2018-07-19T00:00:00+08:00">2018-07-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-22 15:17:28" itemprop="dateModified" datetime="2022-07-22T15:17:28+08:00">2022-07-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Kotlin/" itemprop="url" rel="index"><span itemprop="name">Kotlin</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>中缀表示法<br>标有 infix 关键字的函数也可以使用中缀表示法（忽略该调用的点与圆括号）调用。中缀函数必须满足以下要求：</p>
-<p>它们必须是成员函数或扩展函数；<br>它们必须只有一个参数；<br>其参数不得接受可变数量的参数且不能有默认值。  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">infix fun Int.shl(x: Int): Int &#123; …… &#125;</span><br><span class="line"></span><br><span class="line">// 用中缀表示法调用该函数</span><br><span class="line">1 shl 2</span><br><span class="line">// 等同于这样</span><br><span class="line">1.shl(2)</span><br></pre></td></tr></table></figure>
-
-<p>中缀函数调用的优先级低于算术操作符、类型转换以及 rangeTo 操作符。 以下表达式是等价的：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 shl 2 + 3 与 1 shl (2 + 3)</span><br><span class="line">0 until n * 2 与 0 until (n * 2)</span><br><span class="line">xs union ys as Set&lt;*&gt; 与 xs union (ys as Set&lt;*&gt;)</span><br></pre></td></tr></table></figure>
-<p>另一方面，中缀函数调用的优先级高于布尔操作符 &amp;&amp; 与 ||、is- 与 in- 检测以及其他一些操作符。这些表达式也是等价的：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">a &amp;&amp; b xor c 与 a &amp;&amp; (b xor c)</span><br><span class="line">a xor b in c 与 (a xor b) in c</span><br></pre></td></tr></table></figure>
-<p>完整的优先级层次结构请参见其语法参考。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class MyStringCollection &#123;</span><br><span class="line">    infix fun add(s: String) &#123; …… &#125;</span><br><span class="line"></span><br><span class="line">    fun build() &#123;</span><br><span class="line">        this add &quot;abc&quot;   // 正确</span><br><span class="line">        add(&quot;abc&quot;)       // 正确</span><br><span class="line">        add &quot;abc&quot;        // 错误：必须指定接收者</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">infix fun Int.xyz(x:Int):Int&#123;</span><br><span class="line">    return x</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fun main(args: Array&lt;String&gt;) &#123;</span><br><span class="line">   val a = 3</span><br><span class="line">    3.xyz(2)</span><br><span class="line">    3 xyz  2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
 
 </div>
   </main>
